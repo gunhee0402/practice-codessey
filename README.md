@@ -6,12 +6,11 @@
 
 ---
 ## 실행 환경 및 전제 조건
-OS: macOS (Apple Silicon)
-Shell: zsh
-Container: Docker (OrbStack) - 버전 28.5.2
-Editor: Visual Studio Code
-Git: git version 2.55.0
-작업 경로 (절대 경로): /Users/jkhlms35873333587/codyssey-mission (반드시 해당 위치에서 명령 실행)
+- **OS:** macOS (Apple Silicon)
+- **Shell:** zsh
+- **Container:** Docker (OrbStack) - 버전 28.5.2
+- **Editor:** Visual Studio Code
+- **Git:** git version 2.55.0
 
 ## 실행 방법
 
