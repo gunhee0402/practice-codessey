@@ -272,30 +272,29 @@ Accept-Ranges: bytes
 ## 6. 바인드 마운트와 영속적 데이터 관리
 
 ### 6.1 바인드 마운트 실행 및 데이터 동적 반영
-호스트의 `$(pwd)/site` 디렉터리를 컨테이너 내부 Nginx 웹 루트로 마운트합니다.
 
-$ docker run -d -p 8080:80 --name my-web -v $(pwd)/site:/usr/share/nginx/html my-web-server
+# 1. 호스트의 $(pwd)/site 디렉터리를 컨테이너 내부 Nginx 웹 루트로 마운트
+$docker run -d -p 8080:80 --name my-web -v$(pwd)/site:/usr/share/nginx/html my-web-server
 e8f7a6b5c4d3...
 
-# 초기 응답 확인
+# 2. 초기 응답 확인
 $ curl http://localhost:8080
 <h1>Hello Codyssey!</h1>
 
-# 호스트에서 파일 직접 수정
+# 3. 호스트에서 파일 직접 수정
 $ echo "<h1>Updated Codyssey Volume!</h1>" > ./site/index.html
 
-# 재시작 없이 실시간 반영 확인
+# 4. 재시작 없이 실시간 반영 확인
 $ curl http://localhost:8080
 <h1>Updated Codyssey Volume!</h1>
 
 ### 6.2 컨테이너 삭제 후 호스트 데이터 보존 검증 (독립성 확인)
 컨테이너를 강제 삭제하더라도 호스트 측 데이터는 완전히 보존됨을 검증하는 로그입니다.
-
-# 컨테이너 삭제
+# 1. 컨테이너 강제 삭제
 $ docker rm -f my-web
 my-web
 
-# 호스트 디렉터리 파일 및 권한, 내용 유지 상태 스냅샷 확인
+# 2. 호스트 디렉터리 파일 및 권한, 내용 유지 확인
 $ ls -la ./site/index.html
 -rw-r--r-- 1 jkhlms35873333587 jkhlms35873333587 35 Jul 28 21:35 ./site/index.html
 
