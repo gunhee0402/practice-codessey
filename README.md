@@ -24,7 +24,7 @@ docker run -d -p 8080:80 --name my-web my-web-server
 접속 주소 및 확인 접속 URL: http://localhost:8080
 CLI 접속 검증: curl http://localhost:8080
 
-<img width="1273" height="811" alt="Image" src="https://github.com/user-attachments/assets/0d6c70a7-e2a1-4fbc-936d-8c970a811960" />
+<img width="2454" height="1102" alt="Image" src="https://github.com/user-attachments/assets/28df24e4-218a-4dcf-a055-db149b48b9b4" />
 
 <img width="695" height="336" alt="Image" src="https://github.com/user-attachments/assets/b46684c0-450e-4d7e-99dd-ccb6c584b60e" />
 
