@@ -418,6 +418,8 @@ zsh: event not found: </h1>
 * **검증 명령 비교**:
 
 # [전] 실패 사례 (쌍따옴표 및 셸 파싱 간섭)
+#### [전] 실패 사례 (쌍따옴표 및 셸 파싱 간섭)
+```bash
 $ echo "<h1>Hello!</h1>"
 zsh: event not found: </h1>
 
