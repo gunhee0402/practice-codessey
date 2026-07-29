@@ -423,21 +423,22 @@ $ echo "<h1>Hello!</h1>"
 zsh: event not found: </h1>
 ```
 #### [후] 성공 사례 (홑따옴표 사용으로 셸 해석 방지)
+```bash
 $ echo '<h1>Hello!</h1>'
 <h1>Hello!</h1>
 
 #### 3. 조치
 모든 inline HTML 및 특수문자가 포함된 명령어는 홑따옴표(`'...'`)로 감싸서 실행하도록 수정함.
 
----
+```
 
-### 데이터 백업 및 복구 가이드 (볼륨 백업 표준)
+ ### 데이터 백업 및 복구 가이드 (볼륨 백업 표준)
 
 #### 백업 실행 명령
 $ docker run --rm --volumes-from my-web -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /usr/share/nginx/html
 /usr/share/nginx/html/
 /usr/share/nginx/html/index.html
 
-#### 백업 복원 (Restore) 절차
+ #### 백업 복원 (Restore) 절차
 # 복원용 새 컨테이너 생성 및 압축 해제
 $ docker run --rm --volumes-from my-web-new -v $(pwd):/backup ubuntu tar xvf /backup/backup.tar -C /
